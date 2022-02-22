@@ -1,32 +1,40 @@
-<h2> Add a new movie to the list</h2>
-
-<form method="POST" action="/movies/create">
-
-    <div>
-        <label for="title" class="form-label">Title:</label>
-        <input type="text" name="title" >
+<div class="d-flex flex-row-reverse">
+  <div class="column">
+    <div class="row">
+      <h2> Add a new movie to the list</h2>
     </div>
+    <div class="row">
 
-    <div>
-        <label for="genre" class="form-label">Genre:</label>
-        <input type="text" name="genre">
-    </div>
+      <form method="POST" action="/movies/create">
 
-    <div>
-        <label for="plot" class="form-label">Plot:</label>
-        <input type="text" name="plot">
-    </div>
+        <div class="mb-3">
+          <label class="form-label" for="title">Title:</label>
+          <input class="form-control" name="title" type="text"/>
+        </div>
 
-    <div>
-        <label for="cast">Select a Celebrity:
-            <select name="cast" multiple>
-                {{#each celebList}}
-                    <option value={{this._id}}>{{this.name}}</option>
-                {{/each}}
+        <div class="mb-3">
+          <label class="form-label for="genre"">Genre:</label>
+          <input class="form-control" name="genre" type="text"/>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="plot">Plot:</label>
+          <input class="form-control" name="plot" type="text"/>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="cast">Select a Celebrity:
+            <select class="form-control" name="cast" multiple>
+              {{#each celebList}}
+                <option value={{this._id}}>{{this.name}}</option>
+              {{/each}}
             </select>
-        </label>
+          </label>
+        </div>
+
+        <button class="btn btn-primary">Add Movie</button>
+
+      </form>
     </div>
-
-    <button class="btn btn-outline-success">Add Movie</button>
-
-</form>
+  </div>
+</div>
