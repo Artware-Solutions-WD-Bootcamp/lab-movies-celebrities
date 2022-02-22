@@ -1,0 +1,23 @@
+<h2>Details of the movie</h2>
+
+<h4><b>Tittle:</b> {{movieQuery.title}}</h4>
+<p><b>Genre:</b> {{movieQuery.genre}}</p>
+<p><b>Plot:</b> {{movieQuery.plot}}</p>
+<ul>
+    {{#each movieQuery.cast}}
+        <li><b>Actor:</b> {{this.name}} - <b>Occupation:</b> {{this.occupation}} - <b>Catch Phrase:</b> {{this.catchPhrase}}</li>
+    {{/each}}
+</ul>
+<div>
+    <div>
+        <form class="card-link" method="POST" action="/movies/{{movieQuery._id}}/delete">
+            <button class="btn btn-outline-danger">Delete Movie</button>
+        </form>
+    </div>
+
+    <div class="card-list-drone">
+        <a class="card-link" href="/movies/{{movieQuery._id}}/edit">
+            <button class="btn btn-outline-info">Update Movie</button>
+        </a>
+    </div>
+</div>
